@@ -2,6 +2,7 @@ package infinite.com.factorydemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
 
 import infinite.com.factorydemo.abstractfactory.AudiCar;
 import infinite.com.factorydemo.abstractfactory.BusinessDriver;
@@ -11,11 +12,13 @@ import infinite.com.factorydemo.methodfactory.MethodDriver;
 import infinite.com.factorydemo.simplefactory.Driver;
 
 public class MainActivity extends AppCompatActivity {
+    private ListView lvListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        lvListView = (ListView) findViewById(R.id.lvListView);
 
         invokeSimpleFactory();
 
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         invokeAbstractFatory();
+
+//        lvListView.setAdapter(new ListAdapter());
 
 
     }
